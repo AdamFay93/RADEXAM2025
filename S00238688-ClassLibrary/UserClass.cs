@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace S00238688_ClassLibrary
 {
-    internal class UserClass
+    public class UserClass
     {
         public int User_ID { get; set; }
         public string Name { get; set; }

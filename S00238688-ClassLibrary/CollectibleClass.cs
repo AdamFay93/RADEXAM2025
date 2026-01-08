@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace S00238688_ClassLibrary
 {
-    internal class CollectibleClass
+    public class CollectibleClass
     {
         public int Collectible_ID { get; set; }
         public string Name { get; set; }

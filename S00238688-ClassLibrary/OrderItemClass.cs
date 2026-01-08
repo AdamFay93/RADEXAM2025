@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace S00238688_ClassLibrary
 {
-    internal class OrderItemClass
+    public class OrderItemClass
     {
         public int Order_Item_ID { get; set; }
         public int Order_ID { get; set; }
