@@ -1,10 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
 using S00238688_ClassLibrary;
 using System.Diagnostics.Metrics;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 namespace Program
 {
     public class ConsoleEcommerceContext : DbContext
     {
+        public static void Main() { }
         public DbSet<CategoryClass> Categories { get; set; }
         public DbSet<CollectibleClass> Collectibles { get; set; }
         public DbSet<OrderClass> Orders { get; set; }
@@ -12,7 +15,8 @@ namespace Program
         public DbSet<UserClass> Users { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=localhost;Database=ConsoleEcommerceDB;Trusted_Connection=True;");
+            string connection = "Server=localhost;Database=ConsoleEcommerceDB;Trusted_Connection=True;";
+            optionsBuilder.UseSqlServer(connection, b => b.MigrationsAssembly("S00238688-ClassLibrary"));
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
